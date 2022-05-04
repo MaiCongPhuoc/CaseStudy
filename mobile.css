@@ -60,6 +60,7 @@
     position: absolute;
     background-color: rgba(255, 255, 255, 0.362);
     border-radius: 30px;
+    top: 0;
 }
 .header_phone {
     height: 4%;
@@ -89,7 +90,7 @@
     width: 25px;
 }
 .div_inbox {
-    height: 90%;
+    height: 91%;
     position: absolute;
     left: 4px;
     width: 98%;
@@ -120,7 +121,7 @@
     color: rgb(131, 131, 131);
 }
 .div_inbox_content {
-    height: 86%;
+    height: 76%;
     overflow: hidden;
 }
 .div_inbox-sendmes {

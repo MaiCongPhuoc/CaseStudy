@@ -1,16 +1,19 @@
-function switchChargeNO() {
-	if(chargeNokia == false) {
-		document.getElementById('toggleChargeNO').checked;
-		chargeNokia = true;
-		turnChargeNO();
-		$("#NOKIA .charged").css("display", 'none');
-		$("#NOKIA .charging").css("display", 'block');
-	}
-	else {
-		chargeNokia = false;
-		clearInterval(onChargeNO);
-		$("#NOKIA .charged").css("display", 'block');
-		$("#NOKIA .charging").css("display", 'none');
-		setBatterColor(nokia, "#NOKIA");
+let batteryIndicator = 0;
+let plus = 1;
+let batery = -1;
+function switchChargeNO(b) {
+	batery *= b;
+	if (batery > 0) {
+		setTimeout(function () {
+			let indicator = document.querySelector('.batery_percent>span');
+			total = batteryIndicator += plus;
+			if (total <= 50) {
+				indicator.innerHTML = `${total}%`;
+				switchChargeNO();
+			}
+			return total;
+		}, 500)
+	}else {
+		return switchChargeNO();
 	}
 }

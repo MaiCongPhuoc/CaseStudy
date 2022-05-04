@@ -19,28 +19,23 @@ class Message {
     }
 }
 let powerPhone = -1;
+let poweriPhone = -1;
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let arrMessage = [];
+let arrImessage = [];
 let showDate = new Date();
 
-let id = 1;
+let idNokia = 'NOKIA';
+let idIphone = 'Iphone';
 
-let mes = new Message(id, 'đây là nội dung message', 'Iphone');
-arrMessage.push(mes);
-id++;
-mes = new Message(id, 'đây là nội dung message 2 ', 'Iphone');
-arrMessage.push(mes);
-id++;
-mes = new Message(id, 'đây là nội dung message 3', 'Iphone');
-arrMessage.push(mes);
-id++;
-mes = new Message(id, 'đây là nội dung message 4', 'Iphone');
-arrMessage.push(mes);
-id++;
-/**
- * show hours
- */
+// let mes = new Message(idIphone, 'đây là nội dung message NOKIA', 'Iphone');
+// arrMessage.push(mes);
+
+// let imes = new Message(idNokia, 'đây là nội dung message Iphone ', 'Iphone');
+// arrImessage.push(imes);
+
+
 function showHours() {
     let sHours = document.querySelector('.header_phone-left');
     sHours.innerHTML = `<span>${showDate.getHours()}:${showDate.getMinutes()}</span>`
@@ -63,14 +58,14 @@ function power(p) {
     }
     return powerPhone
 }
-function ipower(p) {
-    powerPhone *= p;
-    if(powerPhone > 0) {
+function ipower(i) {
+    poweriPhone *= i;
+    if(poweriPhone > 0) {
         document.querySelector('.home_iphone>.power').classList.add('d_none');
     } else {
         document.querySelector('.home_iphone>.power').classList.remove('d_none');
     }
-    return powerPhone
+    return poweriPhone
 }
 function renderMessage1() {
     let ulMessage = document.querySelector('.div_message-content>ul');
@@ -82,7 +77,7 @@ function renderMessage1() {
                 </span>
                 <div class="div_message-box">
                     <div>
-                        <strong>${arrMessa.sentTo}</strong>
+                        <strong>${arrMessa.id}</strong>
                         <small>${arrMessa.getDay()}</small>
                     </div>
                     <div class="content_message">
@@ -96,7 +91,7 @@ function renderMessage1() {
 }
 function renderMessage2() {
     let ulMessage = document.querySelector('.div_iibox-content>ul');
-    let render = arrMessage.map(function (arrMessa) {
+    let render = arrImessage.map(function (arrMessa) {
         return `
             <li onclick="">
             <div class="div_iibox-box">
@@ -108,7 +103,7 @@ function renderMessage2() {
                         ${arrMessa.content}
                     </div>
                 </div>
-                <strong>NOKIA</strong>
+                <strong>${arrMessa.id}</strong>
                 <span>
                     <img src="./img/NO_sender.png" alt="">
                 </span>
@@ -126,9 +121,9 @@ function send() {
         alert("you haven't entered the message!!");
         return
     }
-    mes = new Message(id, contentMess, 'Iphone');
+    mes = new Message(idIphone, contentMess, 'Iphone');
     arrMessage.push(mes);
-    id++;
+    arrImessage.push(mes);
     renderMessage1();
     renderMessage2()
     document.querySelector('#enterMes').value = '';
@@ -141,9 +136,9 @@ function send2() {
         alert("you haven't entered the message!!");
         return
     }
-    mes = new Message(id, contentMess, 'Iphone');
-    arrMessage.push(mes);
-    id++;
+    imes = new Message(idNokia, contentMess, 'Iphone');
+    arrMessage.push(imes);
+    arrImessage.push(imes);
     renderMessage1();
     renderMessage2()
     document.querySelector('#div_imessage').value = '';
