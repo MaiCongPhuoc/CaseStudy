@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App mobile</title>
-    <link rel="stylesheet" href="mobile.css">
-    <link rel="stylesheet" href="checkbox.css">
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/checkbox.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/battery.css">
 </head>
 
 <body>
@@ -22,11 +24,22 @@
                     <b>POWER</b>
                 </div>
                 <div class="nav_right">
-                    <b>CHARGE</b>
+                    <div style="float: right;">
+                        <p>
+                            <input id="toggleChargeNO" type="checkbox" onclick="switchChargeNO();"/>
+                            <label class="label" for="toggleChargeNO">
+                                <span id="switchChargeNO"></span>
+                            </label>
+                        </p>
+                    </div>
+                    <div style="float: right; margin-left: 10px; margin-top: 2px;">
+                        <b>CHARGE</b>
+                    </div>
+                    <!-- <b>CHARGE</b>
                     <label class="switch">
                         <input type="checkbox" checked onclick="switchChargeNO()">
                         <span class="slider round"></span>
-                    </label>
+                    </label> -->
                 </div>
             </div>
             <div id="nav_right" class="nav_content_item">
@@ -57,13 +70,26 @@
                     <div class="power">
                         
                     </div>
-                    <div class="header_phone">
+                    <div class="header_phone nokia">
                         <div class="header_phone-left">
                             <span></span>
                         </div>
                         <div class="header_phone-right">
-                            <div class="battery"></div>
-                            <div class="batery_percent"><span style="font-size: 15px;">0%</span></div>
+                            <div class="pull-right">
+                                <div class="img-battery" style="margin-top: -2px;">
+                                    <div class="top"></div>
+                                    <div class="charged" style="height: 8px;"></div>
+                                    <div class="charging">
+                                        <div class="charge1"></div>
+                                        <div class="charge2"></div>
+                                        <div class="charge3"></div>
+                                        <div class="charge4"></div>
+                                    </div>
+                                </div>
+                                <!-- <div style="float: left; margin-top: -8px;"><span class="txt-battery"></span></div> -->
+                            </div>
+                            <!-- <div class="battery"></div> -->
+                            <div class="batery_percent"><span class="txt-battery" style="font-size: 15px;">25%</span></div>
                         </div>
                     </div>
                     <div class="warring"></div>
@@ -269,7 +295,7 @@
         </div>
     </div>
 </body>
-<script src="mobile.js"></script>
-<script src="battary.js"></script>
+<script src="./js/mobile.js"></script>
+<script src="./js/battery.js"></script>
 
 </html>

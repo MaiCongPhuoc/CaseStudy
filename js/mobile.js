@@ -1,11 +1,41 @@
+class Mobile {
+	constructor(name, battery) {
+		this.name = name;
+		this.battery = battery;	
+	}
+
+    getBattery() {
+		return this.battery;
+	}
+
+    setBattery(batt) {
+		if(batt > 100)
+			return 100;
+		return batt;
+	}
+
+    setChargeBattery() {
+		if (this.battery >= 100){
+			this.battery = 100;
+		}
+		else{
+			this.battery += 1;
+		}
+	}
+}
+
+let nokia = new Mobile('NOKIA', 15);
+let iphone = new Mobile('IPHONE', 35);
+
 class Message {
-    constructor(id, content, sentTo, sentDay, inbox, inboxDay) {
+    constructor(id, content, sentTo, sentDay, inbox, inboxDay, battery) {
         this.id = id;
         this.content = content;
         this.sentTo = sentTo;
         this.sentDay = sentDay;
         this.inbox = inbox;
         this.inboxDay = inboxDay;
+        this.battery = battery;
     }
     getDay() {
         let currentdate = new Date();
@@ -18,6 +48,7 @@ class Message {
         return hours = `${showDate.getHours()}:${showDate.getMinutes()}:${showDate.getSeconds()}`
     }
 }
+
 let powerPhone = -1;
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -26,7 +57,7 @@ let showDate = new Date();
 
 let id = 1;
 
-let mes = new Message(id, 'đây là nội dung message', 'Iphone');
+let mes = new Message(id, 'đây là nội dung message', 'Iphone', 25);
 arrMessage.push(mes);
 id++;
 mes = new Message(id, 'đây là nội dung message 2 ', 'Iphone');
