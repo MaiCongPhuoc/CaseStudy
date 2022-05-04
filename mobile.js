@@ -38,6 +38,9 @@ id++;
 mes = new Message(id, 'đây là nội dung message 4', 'Iphone');
 arrMessage.push(mes);
 id++;
+/**
+ * show hours
+ */
 function showHours() {
     let sHours = document.querySelector('.header_phone-left');
     sHours.innerHTML = `<span>${showDate.getHours()}:${showDate.getMinutes()}</span>`
