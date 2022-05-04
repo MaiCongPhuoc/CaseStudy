@@ -22,6 +22,11 @@ class Mobile {
 			this.battery += 1;
 		}
 	}
+    setLowerBattery() {
+        if(this.battery >= 0) {
+            this.battery -= 1;
+        }
+    }
 }
 
 let nokia = new Mobile('NOKIA', 15);
@@ -49,7 +54,6 @@ class Message {
     }
 }
 
-let powerPhone = -1;
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let arrMessage = [];
@@ -86,22 +90,47 @@ function showHours() {
     timeiMessage.innerHTML = `${days[showDate.getDay()]}, ${months[showDate.getMonth()]} ${showDate.getDate()}, ${showDate.getFullYear()}`
 }
 function power(p) {
-    powerPhone *= p;
-    if(powerPhone > 0) {
+    let power = document.querySelector('#toggleChargelNO').checked;
+    if(power) {
+        turnLowerBattery ()
         document.querySelector('.home_phone>.power').classList.add('d_none');
     } else {
         document.querySelector('.home_phone>.power').classList.remove('d_none');
     }
-    return powerPhone
 }
+function turnLowerBattery () {
+	onChargeNO = setInterval(function() {
+        if(nokia.getBattery() == 0) {
+            document.querySelector('.home_phone .power').classList.remove('d_none')
+            return nokia.getBattery() == 0;
+        }else{
+            nokia.setLowerBattery();
+            let txtBattery = document.querySelector('.nokia .txt-battery');
+            txtBattery.innerHTML = nokia.getBattery() + '%';
+        }
+	}, 3000);
+}
+
 function ipower(p) {
-    powerPhone *= p;
-    if(powerPhone > 0) {
+    let power = document.querySelector('#toggleChargelIP').checked;
+    if(power) {
+        turnLowerBatteryi ();
         document.querySelector('.home_iphone>.power').classList.add('d_none');
     } else {
         document.querySelector('.home_iphone>.power').classList.remove('d_none');
     }
-    return powerPhone
+}
+function turnLowerBatteryi () {
+	onChargeNO = setInterval(function() {
+        if(iphone.getBattery() == 0) {
+            document.querySelector('.home_iphone .power').classList.remove('d_none')
+            return iphone.getBattery() == 0;
+        }else{
+		iphone.setLowerBattery();
+		let txtBattery = document.querySelector('.Iphone .txt-ibattery');
+		txtBattery.innerHTML = iphone.getBattery() + '%';
+        }
+    }, 3000);
 }
 function renderMessage1() {
     let ulMessage = document.querySelector('.div_message-content>ul');

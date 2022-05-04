@@ -17,16 +17,18 @@
         <div class="nav">
             <div id="nav" class="nav_content_item">
                 <div class="nav_left">
-                    <label class="switch">
-                        <input type="checkbox" checked onclick="power(-1)">
-                        <span class="slider round"></span>
-                    </label>
+                    <p>
+                        <input id="toggleChargelNO" type="checkbox" onclick="power(-1)"/>
+                        <label class="label" for="toggleChargelNO">
+                            <span id="switchChargeNO"></span>
+                        </label>
+                    </p>
                     <b>POWER</b>
                 </div>
                 <div class="nav_right">
                     <div style="float: right;">
                         <p>
-                            <input id="toggleChargeNO" type="checkbox" onclick="switchChargeNO();"/>
+                            <input id="toggleChargeNO" type="checkbox" onclick="switchChargeNO()"/>
                             <label class="label" for="toggleChargeNO">
                                 <span id="switchChargeNO"></span>
                             </label>
@@ -44,18 +46,22 @@
             </div>
             <div id="nav_right" class="nav_content_item">
                 <div class="nav_left_right">
-                    <label class="switch">
-                        <input type="checkbox" checked onclick="ipower(-1)">
-                        <span class="slider round"></span>
-                    </label>
+                    <p>
+                        <input id="toggleChargelIP" type="checkbox" onclick="ipower(-1)"/>
+                        <label class="label" for="toggleChargelIP">
+                            <span id="switchChargelIP"></span>
+                        </label>
+                    </p>
                     <b>POWER</b>
                 </div>
                 <div class="nav_right_right">
                     <b>CHARGE</b>
-                    <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
+                    <p>
+                        <input id="toggleChargeIP" type="checkbox" onclick="switchChargeIP()"/>
+                        <label class="label" for="toggleChargeIP">
+                            <span id="switchChargeIP"></span>
+                        </label>
+                    </p>
                 </div>
             </div>
         </div>
@@ -68,7 +74,6 @@
                 </div>
                 <div class="home_phone">
                     <div class="power">
-                        
                     </div>
                     <div class="header_phone nokia">
                         <div class="header_phone-left">
@@ -89,7 +94,7 @@
                                 <!-- <div style="float: left; margin-top: -8px;"><span class="txt-battery"></span></div> -->
                             </div>
                             <!-- <div class="battery"></div> -->
-                            <div class="batery_percent"><span class="txt-battery" style="font-size: 15px;">25%</span></div>
+                            <div class="batery_percent"><span class="txt-battery" style="font-size: 15px;"></span></div>
                         </div>
                     </div>
                     <div class="warring"></div>
@@ -192,15 +197,27 @@
                 </div>
                 <div class="home_iphone">
                     <div class="power ">
-
                     </div>
-                    <div class="header_iphone">
+                    <div class="header_iphone Iphone">
                         <div class="header_iphone-left">
                             <span></span>
                         </div>
                         <div class="header_iphone-right">
-                            <div class="battery"></div>
-                            <div class="batery_percent"><span style="font-size: 15px;">0%</span></div>
+                            <div class="pull-right">
+                                <div class="img-battery" style="margin-top: -2px;">
+                                    <div class="top"></div>
+                                    <div class="charged" style="height: 8px;"></div>
+                                    <div class="charging">
+                                        <div class="charge1"></div>
+                                        <div class="charge2"></div>
+                                        <div class="charge3"></div>
+                                        <div class="charge4"></div>
+                                    </div>
+                                </div>
+                                <!-- <div style="float: left; margin-top: -8px;"><span class="txt-battery"></span></div> -->
+                            </div>
+                            <!-- <div class="battery"></div> -->
+                            <div class="batery_percent"><span style="font-size: 15px;" class="txt-ibattery">0%</span></div>
                         </div>
                     </div>
                     <div class="div_imessage d_none">

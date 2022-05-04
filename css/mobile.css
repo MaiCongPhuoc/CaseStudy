@@ -23,6 +23,16 @@
     display: flex;
     padding: 15px 0 0 0;
 }
+.nav_left, .nav_left_right {
+    display: flex;
+}
+.nav_left>b, .nav_left_right>b {
+    margin-left: 15px;
+    margin-top: 2px;
+}
+.nav_right_right {
+    display: flex;
+}
 .content {
     display: flex;
 }
@@ -55,11 +65,17 @@
     height: 520px;
 }
 .power {
-    width: 100%;
+    width: 99%;
     height: 100%;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.362);
+    background-color: rgba(255, 255, 255, 0.589);
     border-radius: 30px;
+    margin-left: 3px;
+}
+.home_iphone> .power {
+    width: 97%;
+    margin-left: 5px;
+    height: 102%;
 }
 .header_phone {
     height: 4%;
@@ -120,7 +136,7 @@
     color: rgb(131, 131, 131);
 }
 .div_inbox_content {
-    height: 86%;
+    height: 75%;
     overflow: hidden;
 }
 .div_inbox-sendmes {
@@ -306,7 +322,7 @@
     /* position: relative; */
 }
 .header_iphone-left {
-    margin: 0 180px 0 30px;
+    margin: 0 140px 0 30px;
     color: aliceblue;
 }
 .header_iphone-right {
