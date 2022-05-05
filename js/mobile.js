@@ -58,6 +58,8 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 let arrMessage = [];
 let showDate = new Date();
+let powerMobile = document.querySelector('#toggleChargelNO');
+let ipowerMobile = document.querySelector('#toggleChargelIP');
 
 let id = 1;
 
@@ -83,12 +85,12 @@ function showHours() {
     timeiMessage.innerHTML = `${days[showDate.getDay()]}, ${months[showDate.getMonth()]} ${showDate.getDate()}, ${showDate.getFullYear()}`
 }
 function power(p) {
-    let power = document.querySelector('#toggleChargelNO').checked;
-    if(power) {
+    if(powerMobile.checked) {
         turnLowerBattery ()
-        document.querySelector('.home_phone>.power').classList.add('d_none');
+        document.querySelector('.home_phone .power').classList.add('d_none');
     } else {
-        document.querySelector('.home_phone>.power').classList.remove('d_none');
+        clearInterval(onChargeNO)
+        document.querySelector('.home_phone .power').classList.remove('d_none');
     }
 }
 function turnLowerBattery () {
@@ -105,16 +107,16 @@ function turnLowerBattery () {
 }
 
 function ipower(p) {
-    let power = document.querySelector('#toggleChargelIP').checked;
-    if(power) {
-        turnLowerBatteryi ();
-        document.querySelector('.home_iphone>.power').classList.add('d_none');
+    if(ipowerMobile.checked) {
+        turnLowerBatteryi();
+        document.querySelector('.home_iphone .power').classList.add('d_none');
     } else {
-        document.querySelector('.home_iphone>.power').classList.remove('d_none');
+        clearInterval(onChargeIP)
+        document.querySelector('.home_iphone .power').classList.remove('d_none');
     }
 }
 function turnLowerBatteryi () {
-	onChargeNO = setInterval(function() {
+	onChargeIP = setInterval(function() {
         if(iphone.getBattery() == 0) {
             document.querySelector('.home_iphone .power').classList.remove('d_none')
             return iphone.getBattery() == 0;

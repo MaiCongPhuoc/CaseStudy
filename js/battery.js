@@ -1,20 +1,18 @@
-let chargeNokia = false;
+
 let onChargeNO; 
+let checkBatteryNO = document.getElementById('toggleChargeNO');
 
 document.querySelector('.nokia .txt-battery').innerHTML = nokia.getBattery() + "%";
 document.querySelector('.nokia .charging').style.display = 'none';
 setBatterColor(nokia, ".nokia");
 
 function switchChargeNO() {
-	if(chargeNokia == false) {
-		document.getElementById('toggleChargeNO').checked;
-		chargeNokia = true;
+	if(checkBatteryNO.checked) {
 		turnChargeNO();
 		document.querySelector('.nokia .charged').style.display = 'none';
 		document.querySelector('.nokia .charging').style.display = 'block';
 	}
 	else {
-		chargeNokia = false;
 		clearInterval(onChargeNO);
 		document.querySelector('.nokia .charged').style.display = 'block';
 		document.querySelector('.nokia .charging').style.display = 'none';
@@ -53,21 +51,19 @@ function setBatterColor(deviceName, id) {
 //iphone
 let chargeIphone = false;
 let onChargeIP; 
+let checkBatteryIP = document.getElementById('toggleChargeIP');
 
 document.querySelector('.Iphone .txt-ibattery').innerHTML = iphone.getBattery() + "%";
 document.querySelector('.Iphone .charging').style.display = 'none';
 setBatterColor(iphone, ".Iphone");
 
 function switchChargeIP() {
-	if(chargeIphone == false) {
-		document.getElementById('toggleChargeNO').checked;
-		chargeIphone = true;
+	if(checkBatteryIP.checked) {
 		turnChargeIP();
 		document.querySelector('.Iphone .charged').style.display = 'none';
 		document.querySelector('.Iphone .charging').style.display = 'block';
 	}
 	else {
-		chargeIphone = false;
 		clearInterval(onChargeIP);
 		document.querySelector('.Iphone .charged').style.display = 'block';
 		document.querySelector('.Iphone .charging').style.display = 'none';
