@@ -101,7 +101,7 @@ function turnLowerBattery () {
             let txtBattery = document.querySelector('.nokia .txt-battery');
             txtBattery.innerHTML = nokia.getBattery() + '%';
         }
-	}, 3000);
+	}, 1000);
 }
 
 function ipower(p) {
@@ -123,7 +123,7 @@ function turnLowerBatteryi () {
 		let txtBattery = document.querySelector('.Iphone .txt-ibattery');
 		txtBattery.innerHTML = iphone.getBattery() + '%';
         }
-    }, 3000);
+    }, 1000);
 }
 function renderMessage1() {
     let ulMessage = document.querySelector('.div_message-content>ul');
