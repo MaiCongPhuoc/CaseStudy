@@ -1,0 +1,135 @@
+.label {
+    display: inline-block;
+    width: 4em;
+    height: 1.2em;
+    border-radius: 0.8em;
+    position: relative;
+    cursor: pointer;
+    background: #878787;
+
+    padding: 0.2em 0.6em 0.3em;
+    /* font-size: 75%; */
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+#togglePowerNO, #toggleChargeNO {
+    opacity: 0;
+}
+
+#toggleChargeNO:checked ~ .label {
+    background: #76a06d;
+}
+
+
+#toggleChargeNO:checked ~ .label #switchChargeNO {
+    background: #6cbd5a;
+    transform: translatex(2.5em);
+    transition: transform 0.2s ease-in;
+}
+
+#switchChargeNO {
+    position: absolute;
+    width: 1.9em;
+    height: 1.9em;
+    margin-top: -0.5em;
+    margin-left: -2.2em;
+    border-radius: 1em;
+    background: #c9c9c9;
+    box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease-in;
+  }
+
+
+
+
+#togglePowerNO, #toggleChargelNO {
+    opacity: 0;
+}
+
+#toggleChargelNO:checked ~ .label {
+    background: #76a06d;
+}
+
+
+#toggleChargelNO:checked ~ .label #switchChargeNO {
+    background: #6cbd5a;
+    transform: translatex(2.5em);
+    transition: transform 0.2s ease-in;
+}
+
+#switchChargeNO {
+    position: absolute;
+    width: 1.9em;
+    height: 1.9em;
+    margin-top: -0.5em;
+    margin-left: -2.2em;
+    border-radius: 1em;
+    background: #c9c9c9;
+    box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease-in;
+  }
+  /*iphone*/
+#toggleChargelIP {
+    opacity: 0;
+}
+
+#toggleChargelIP:checked ~ .label {
+    background: #76a06d;
+}
+
+.nav_left {
+    display: flex;
+}
+#toggleChargelIP:checked ~ .label #switchChargelIP {
+    background: #6cbd5a;
+    transform: translatex(2.5em);
+    transition: transform 0.2s ease-in;
+}
+
+#switchChargelIP {
+    position: absolute;
+    width: 1.9em;
+    height: 1.9em;
+    margin-top: -0.5em;
+    margin-left: -2.2em;
+    border-radius: 1em;
+    background: #c9c9c9;
+    box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease-in;
+  }
+
+
+
+#toggleChargeIP {
+    opacity: 0;
+}
+
+#toggleChargeIP:checked ~ .label {
+    background: #76a06d;
+}
+
+
+#toggleChargeIP:checked ~ .label #switchChargeIP {
+    background: #6cbd5a;
+    transform: translatex(2.5em);
+    transition: transform 0.2s ease-in;
+}
+
+#switchPowerNO, #switchChargeIP {
+    position: absolute;
+    width: 1.9em;
+    height: 1.9em;
+    margin-top: -0.5em;
+    margin-left: -2.2em;
+    border-radius: 1em;
+    background: #c9c9c9;
+    box-shadow: 5px 0px 28px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.2s ease-in;
+  }
+
+  
