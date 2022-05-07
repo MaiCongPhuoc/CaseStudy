@@ -1,5 +1,5 @@
 
-let onChargeNO; 
+let onChargeNO;
 let checkBatteryNO = document.getElementById('toggleChargeNO');
 
 document.querySelector('.nokia .txt-battery').innerHTML = nokia.getBattery() + "%";
@@ -7,7 +7,7 @@ document.querySelector('.nokia .charging').style.display = 'none';
 setBatterColor(nokia, ".nokia");
 
 function switchChargeNO() {
-	if(checkBatteryNO.checked) {
+	if (checkBatteryNO.checked) {
 		turnChargeNO();
 		document.querySelector('.nokia .charged').style.display = 'none';
 		document.querySelector('.nokia .charging').style.display = 'block';
@@ -20,22 +20,24 @@ function switchChargeNO() {
 	}
 }
 function lowerBattery() {
-	let offChargeNO = setInterval(function() {
+	let offChargeNO = setInterval(function () {
 		let power = document.querySelector('#toggleChargelNO').checked;
-		if(power){
-			turnLowerBattery ();
-		}else {
-			console.log('b');
-		}
-	}, 1000)
+		if (power) {
+			turnLowerBattery();
+		} 
+		// else {
+		// 	clearInterval(onChargeNO)
+		
+		// }
+	})
 }
 
-function turnChargeNO(){
-	onChargeNO = setInterval(function(){
+function turnChargeNO() {
+	onChargeNO = setInterval(function () {
 		nokia.setChargeBattery();
 		let txtBattery = document.querySelector('.nokia .txt-battery');
 		txtBattery.innerHTML = nokia.getBattery() + '%';
-	}, 900);
+	}, 700);
 }
 
 function setBatterColor(deviceName, id) {
@@ -50,7 +52,7 @@ function setBatterColor(deviceName, id) {
 }
 //iphone
 let chargeIphone = false;
-let onChargeIP; 
+let onChargeIP;
 let checkBatteryIP = document.getElementById('toggleChargeIP');
 
 document.querySelector('.Iphone .txt-ibattery').innerHTML = iphone.getBattery() + "%";
@@ -58,7 +60,7 @@ document.querySelector('.Iphone .charging').style.display = 'none';
 setBatterColor(iphone, ".Iphone");
 
 function switchChargeIP() {
-	if(checkBatteryIP.checked) {
+	if (checkBatteryIP.checked) {
 		turnChargeIP();
 		document.querySelector('.Iphone .charged').style.display = 'none';
 		document.querySelector('.Iphone .charging').style.display = 'block';
@@ -70,13 +72,20 @@ function switchChargeIP() {
 		setBatterColor(iphone, ".Iphone");
 	}
 }
-
-function turnChargeIP(){
-	onChargeIP = setInterval(function(){
+function ilowerBattery() {
+	let ipower = document.querySelector('#toggleChargelIP').checked;
+	if (ipower) {
+		turnLowerBatteryi();
+	} else {
+		clearInterval(onChargeIP)
+	}
+}
+function turnChargeIP() {
+	onChargeIP = setInterval(function () {
 		iphone.setChargeBattery();
 		let txtBattery = document.querySelector('.Iphone .txt-ibattery');
 		txtBattery.innerHTML = iphone.getBattery() + '%';
-	}, 1000);
+	}, 700);
 }
 
 function setBatterColor(deviceName, id) {

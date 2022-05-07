@@ -322,7 +322,7 @@
     /* position: relative; */
 }
 .header_iphone-left {
-    margin: 0 160px 0 30px;
+    margin: 0 140px 0 30px;
     color: aliceblue;
 }
 .header_iphone-right {
@@ -507,6 +507,7 @@
 }
 .footer_mes {
     height: 10px;
+    /* overflow-y: auto; */
 }
 .footer_mes>div {
     width: 120px;

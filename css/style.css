@@ -52,12 +52,12 @@
 }
 
 #toggleChargelNO:checked ~ .label {
-    background: #76a06d;
+    background: #ff6b6b;
 }
 
 
 #toggleChargelNO:checked ~ .label #switchChargeNO {
-    background: #6cbd5a;
+    background: #c71919;
     transform: translatex(2.5em);
     transition: transform 0.2s ease-in;
 }
@@ -79,14 +79,14 @@
 }
 
 #toggleChargelIP:checked ~ .label {
-    background: #76a06d;
+    background: #ff6b6b;
 }
 
 .nav_left {
     display: flex;
 }
 #toggleChargelIP:checked ~ .label #switchChargelIP {
-    background: #6cbd5a;
+    background: #c71919;
     transform: translatex(2.5em);
     transition: transform 0.2s ease-in;
 }
