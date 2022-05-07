@@ -1,29 +1,29 @@
 class Mobile {
-	constructor(name, battery) {
-		this.name = name;
-		this.battery = battery;	
-	}
+    constructor(name, battery) {
+        this.name = name;
+        this.battery = battery;
+    }
 
     getBattery() {
-		return this.battery;
-	}
+        return this.battery;
+    }
 
     setBattery(batt) {
-		if(batt > 100)
-			return 100;
-		return batt;
-	}
+        if (batt > 100)
+            return 100;
+        return batt;
+    }
 
     setChargeBattery() {
-		if (this.battery >= 100){
-			this.battery = 100;
-		}
-		else{
-			this.battery += 1;
-		}
-	}
+        if (this.battery >= 100) {
+            this.battery = 100;
+        }
+        else {
+            this.battery += 1;
+        }
+    }
     setLowerBattery() {
-        if(this.battery >= 0) {
+        if (this.battery >= 0) {
             this.battery -= 1;
         }
     }
@@ -85,29 +85,29 @@ function showHours() {
     timeiMessage.innerHTML = `${days[showDate.getDay()]}, ${months[showDate.getMonth()]} ${showDate.getDate()}, ${showDate.getFullYear()}`
 }
 function power(p) {
-    if(powerMobile.checked) {
-        turnLowerBattery ()
+    if (powerMobile.checked) {
+        turnLowerBattery()
         document.querySelector('.home_phone .power').classList.add('d_none');
     } else {
         clearInterval(onChargeNO)
         document.querySelector('.home_phone .power').classList.remove('d_none');
     }
 }
-function turnLowerBattery () {
-	onChargeNO = setInterval(function() {
-        if(nokia.getBattery() == 0) {
+function turnLowerBattery() {
+    onChargeNO = setInterval(function () {
+        if (nokia.getBattery() == 0) {
             document.querySelector('.home_phone .power').classList.remove('d_none')
             return nokia.getBattery() == 0;
-        }else{
+        } else {
             nokia.setLowerBattery();
             let txtBattery = document.querySelector('.nokia .txt-battery');
             txtBattery.innerHTML = nokia.getBattery() + '%';
         }
-	}, 1300);
+    }, 1300);
 }
 
 function ipower(p) {
-    if(ipowerMobile.checked) {
+    if (ipowerMobile.checked) {
         turnLowerBatteryi();
         document.querySelector('.home_iphone .power').classList.add('d_none');
     } else {
@@ -115,15 +115,15 @@ function ipower(p) {
         document.querySelector('.home_iphone .power').classList.remove('d_none');
     }
 }
-function turnLowerBatteryi () {
-	onChargeIP = setInterval(function() {
-        if(iphone.getBattery() == 0) {
+function turnLowerBatteryi() {
+    onChargeIP = setInterval(function () {
+        if (iphone.getBattery() == 0) {
             document.querySelector('.home_iphone .power').classList.remove('d_none')
             return iphone.getBattery() == 0;
-        }else{
-		iphone.setLowerBattery();
-		let txtBattery = document.querySelector('.Iphone .txt-ibattery');
-		txtBattery.innerHTML = iphone.getBattery() + '%';
+        } else {
+            iphone.setLowerBattery();
+            let txtBattery = document.querySelector('.Iphone .txt-ibattery');
+            txtBattery.innerHTML = iphone.getBattery() + '%';
         }
     }, 1300);
 }
@@ -131,7 +131,7 @@ function renderMessage1() {
     let ulMessage = document.querySelector('.div_message-content>ul');
     let render = arrMessage.map(function (arrMessa) {
         return `
-            <li onclick="">
+            <li onclick="" id="${arrMessa.id}">
                 <span>
                     <img src="./img/IP_receiver.png" alt="">
                 </span>
@@ -153,7 +153,7 @@ function renderMessage2() {
     let ulMessage = document.querySelector('.div_iibox-content>ul');
     let render = arrMessage.map(function (arrMessa) {
         return `
-            <li onclick="" class="dragY">
+            <li onclick="idete(${arrMessa.id}" class="dragY">
             <div class="div_iibox-box">
                 <div>
                     <div>
@@ -176,7 +176,7 @@ function renderMessage2() {
 
 function send() {
     let contentMess = document.querySelector('#enterMes').value;
-    if(!contentMess) {
+    if (!contentMess) {
         // document.querySelector('.warring').innerHTML = "you haven't entered the message!!";
         alert("you haven't entered the message!!");
         return
@@ -188,10 +188,12 @@ function send() {
     renderMessage2()
     document.querySelector('#enterMes').value = '';
     document.querySelector('.div_inbox').classList.add('d_none');
+    $(".div_message-content>ul>li").draggable({ axis: "x" });
+    $(".div_message-content>ul>li").draggable({ revert: true });
 }
 function send2() {
     let contentMess = document.querySelector('#div_imessage').value;
-    if(!contentMess) {
+    if (!contentMess) {
         // document.querySelector('.warring').innerHTML = "you haven't entered the message!!";
         alert("you haven't entered the message!!");
         return
@@ -203,6 +205,7 @@ function send2() {
     renderMessage2()
     document.querySelector('#div_imessage').value = '';
     document.querySelector('.div_imessage').classList.add('d_none');
+    dragDrop()    
 }
 
 function message() {

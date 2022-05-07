@@ -22,26 +22,35 @@ $(function () {
         }
     })
 });
+function dragDrop() {
+    $(function () {
+        $(".div_message-content>ul>li").draggable({ axis: "x" });
+        $(".div_message-content>ul>li").draggable({ revert: true });
+        $(".div_message-content>ul>li").draggable({
+            stop: function () {
+                var x = $(".div_message-content>ul>li").position();
+                if (x.top >= 40) {
+                    console.log(arrMessage)
+                    // ireset();
+                    $.each(arrMessage, function (index, value) {
+                        arrMessage.splice(index, 1);
+                        renderMessage1()
+                        renderMessage2()
+                        $(".div_message-content>ul>li").draggable({ axis: "x" });
+                        $(".div_message-content>ul>li").draggable({ revert: true });
+
+                    })
+                }
+            }
+        })
+    });
+}
 $(function () {
     $(".div_message-content>ul>li").draggable({ axis: "x" });
-    // $(".div_message-content>ul>li").draggable({ revert: true });
-    $(".div_message-content>ul>li").draggable({
-        stop: function (value) {
-            var x = $(".div_message-content>ul>li").position();
-            if (x.top >= 40) {
-                // ireset();
-                $.each(arrMessage, function (index, value) {
-                    value = index + 1;
-                    console.log(arrMessage.splice(value, 1));
-                    renderMessage1()
-                    renderMessage2()
-                })
-            }
-        }
-    })
-});
+})
 $(function () {
     $(".div_iibox-content>ul>li").draggable({ axis: "y" });
     $(".div_iibox-content>ul>li").draggable({ revert: true });
-    
+
 });
+dragDrop();
