@@ -153,7 +153,7 @@ function renderMessage2() {
     let ulMessage = document.querySelector('.div_iibox-content>ul');
     let render = arrMessage.map(function (arrMessa) {
         return `
-            <li onclick="idete(${arrMessa.id}" class="dragY">
+            <li onclick="" class="dragY">
             <div class="div_iibox-box">
                 <div>
                     <div>

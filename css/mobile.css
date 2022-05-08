@@ -5,6 +5,9 @@
     font-size: 17px;
     box-sizing: border-box;
 }
+body {
+    display: none;
+}
 .main {
     background-color: #34506d; 
     /* margin: 40px auto; */

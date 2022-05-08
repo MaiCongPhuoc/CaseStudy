@@ -22,35 +22,51 @@ $(function () {
         }
     })
 });
-function dragDrop() {
-    $(function () {
-        $(".div_message-content>ul>li").draggable({ axis: "x" });
-        $(".div_message-content>ul>li").draggable({ revert: true });
-        $(".div_message-content>ul>li").draggable({
-            stop: function () {
-                var x = $(".div_message-content>ul>li").position();
-                if (x.top >= 40) {
-                    console.log(arrMessage)
-                    // ireset();
-                    $.each(arrMessage, function (index, value) {
-                        arrMessage.splice(index, 1);
-                        renderMessage1()
-                        renderMessage2()
-                        $(".div_message-content>ul>li").draggable({ axis: "x" });
-                        $(".div_message-content>ul>li").draggable({ revert: true });
-
-                    })
-                }
-            }
-        })
-    });
-}
-$(function () {
+$.mydele = (function () {
     $(".div_message-content>ul>li").draggable({ axis: "x" });
-})
-$(function () {
-    $(".div_iibox-content>ul>li").draggable({ axis: "y" });
-    $(".div_iibox-content>ul>li").draggable({ revert: true });
-
+    $(".div_message-content>ul>li").draggable({
+        stop: function (event) {
+            let mes = arrMessage.findIndex(function (currenValue) {
+                if (event.target.id == currenValue.id) {
+                    return currenValue
+                }
+            });
+            arrMessage.splice(mes, 1)
+            console.log(arrMessage)
+            renderMessage1();
+            renderMessage2();
+            $.mydele();
+            $.imydele();
+        }
+    })
 });
-dragDrop();
+$.imydele = (function () {
+    $(".div_iibox-content>ul>li").draggable({ axis: "x" });
+    $(".div_iibox-content>ul>li").draggable({
+        stop: function (event) {
+            let mes = arrMessage.findIndex(function (currenValue) {
+                if (event.target.id == currenValue.id) {
+                    return currenValue
+                }
+            });
+            arrMessage.splice(mes, 1)
+            console.log(arrMessage)
+            renderMessage1();
+            renderMessage2();
+            $.imydele();
+            $.mydele();
+        }
+    })
+});
+$(".grid").sortable({
+    appendTo: document.body
+});
+$(document).ready(function () {
+    $('#fade').fadeIn(3000)
+});
+// $(document).ready(function () {
+//     $('#fade1').fadeIn(2000)
+// });
+// deleteLi();
+$.mydele();
+$.imydele();
