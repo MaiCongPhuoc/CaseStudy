@@ -13,10 +13,10 @@ function switchChargeNO() {
 		document.querySelector('.nokia .charging').style.display = 'block';
 	}
 	else {
+		clearInterval(onChargeNO);
 		document.querySelector('.nokia .charged').style.display = 'block';
 		document.querySelector('.nokia .charging').style.display = 'none';
 		setBatterColor(nokia, ".nokia");
-		clearInterval(onChargeNO);
 	}
 }
 function lowerBattery() {
@@ -66,10 +66,10 @@ function switchChargeIP() {
 		document.querySelector('.Iphone .charging').style.display = 'block';
 	}
 	else {
+		clearInterval(onChargeIP);
 		document.querySelector('.Iphone .charged').style.display = 'block';
 		document.querySelector('.Iphone .charging').style.display = 'none';
 		setBatterColor(iphone, ".Iphone");
-		clearInterval(onChargeIP);
 	}
 }
 function lowerBatteryi() {
