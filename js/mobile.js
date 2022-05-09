@@ -59,7 +59,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 let arrMessage = [];
 let showDate = new Date();
 let powerMobile = document.querySelector('#toggleChargelNO');
-let ipowerMobile = document.querySelector('#toggleChargelIP');
+let ipowerMobile = document.querySelector('#right #toggleChargelIP');
 
 let id = 1;
 
@@ -90,6 +90,7 @@ function power(p) {
         turnLowerBattery()
         document.querySelector('.home_phone .power').classList.add('d_none');
     } else {
+        document.getElementById('power').style.zIndex = 2;
         clearInterval(onChargeNO)
         document.querySelector('.home_phone .power').classList.remove('d_none');
     }
@@ -97,7 +98,8 @@ function power(p) {
 function turnLowerBattery() {
     onChargeNO = setInterval(function () {
         if (nokia.getBattery() == 0) {
-            document.querySelector('.home_phone .power').classList.remove('d_none')
+            document.getElementById('power').style.zIndex = 2;
+            document.querySelector('.home_phone .power').classList.remove('d_none');
             return nokia.getBattery() == 0;
         } else {
             nokia.setLowerBattery();
@@ -112,6 +114,7 @@ function ipower(p) {
         turnLowerBatteryi();
         document.querySelector('.home_iphone .power').classList.add('d_none');
     } else {
+        document.getElementById('ipower').style.zIndex = 2;
         clearInterval(onChargeIP)
         document.querySelector('.home_iphone .power').classList.remove('d_none');
     }
@@ -119,6 +122,7 @@ function ipower(p) {
 function turnLowerBatteryi() {
     onChargeIP = setInterval(function () {
         if (iphone.getBattery() == 0) {
+            document.getElementById('power').style.zIndex = 2;
             document.querySelector('.home_iphone .power').classList.remove('d_none')
             return iphone.getBattery() == 0;
         } else {

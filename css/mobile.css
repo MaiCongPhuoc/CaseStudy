@@ -336,7 +336,7 @@ body {
 }
 .batery_percent {
     width: 25px;
-    color: rgb(157, 157, 157);
+    color: #fff;
     margin: 0px 5px 0 5px;
 }
 .battery {
