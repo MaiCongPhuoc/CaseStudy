@@ -115,7 +115,7 @@ function ipower(p) {
         document.querySelector('.home_iphone .power').classList.add('d_none');
     } else {
         document.getElementById('ipower').style.zIndex = 2;
-        clearInterval(onChargeIP)
+        clearInterval(onChargeIP);
         document.querySelector('.home_iphone .power').classList.remove('d_none');
     }
 }
