@@ -82,7 +82,7 @@ function lowerBatteryi() {
 			clearInterval(offChargeNO);
 			clearInterval(onChargeIP);
 		}
-	}, 1000)
+	})
 }
 function turnChargeIP() {
 	onChargeIP = setInterval(function () {
