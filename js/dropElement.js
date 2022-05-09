@@ -51,7 +51,7 @@ $.imydele = (function () {
                 }
             });
             arrMessage.splice(mes, 1)
-            console.log(arrMessage)
+            console.log(event.target.id)
             renderMessage1();
             renderMessage2();
             $.imydele();

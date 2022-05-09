@@ -191,6 +191,7 @@ function send() {
     $(".div_message-content>ul>li").draggable({ axis: "x" });
     $(".div_message-content>ul>li").draggable({ revert: true });
     $.mydele();
+    $.imydele();
 }
 function send2() {
     let contentMess = document.querySelector('#div_imessage').value;
@@ -209,6 +210,7 @@ function send2() {
     $(".div_iibox-content>ul>li").draggable({ axis: "x" });
     $(".div_iibox-content>ul>li").draggable({ revert: true });
     $.imydele();
+    $.mydele();
 }
 
 function message() {
