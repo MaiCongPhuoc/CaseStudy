@@ -67,6 +67,7 @@ let mes = new Message(id, 'đây là nội dung message', 'Iphone', 25);
 arrMessage.push(mes);
 id++;
 mes = new Message(id, 'đây là nội dung message 2 ', 'Iphone');
+id++;
 arrMessage.push(mes);
 /**
  * show hours
@@ -181,8 +182,8 @@ function send() {
         alert("you haven't entered the message!!");
         return
     }
-    id++;
     mes = new Message(id, contentMess, 'Iphone');
+    id++;
     arrMessage.push(mes);
     renderMessage1();
     renderMessage2()
@@ -200,8 +201,8 @@ function send2() {
         alert("you haven't entered the message!!");
         return
     }
-    id++;
     mes = new Message(id, contentMess, 'Iphone');
+    id++;
     arrMessage.push(mes);
     renderMessage1();
     renderMessage2()
