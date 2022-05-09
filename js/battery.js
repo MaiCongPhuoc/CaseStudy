@@ -72,17 +72,17 @@ function switchChargeIP() {
 		clearInterval(onChargeIP);
 	}
 }
-function lowerBattery() {
-	let offChargeIP = setInterval(function () {
+function lowerBatteryi() {
+	let offChargeNO = setInterval(function () {
 		let ipower = document.querySelector('#toggleChargelIP');
 		if (ipower.checked) {
 			turnLowerBatteryi();
 		} 
 		else {
-			clearInterval(offChargeIP);
+			clearInterval(offChargeNO);
 			clearInterval(onChargeIP);
 		}
-	})
+	}, 1000)
 }
 function turnChargeIP() {
 	onChargeIP = setInterval(function () {
