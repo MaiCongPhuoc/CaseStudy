@@ -181,9 +181,9 @@ function send() {
         alert("you haven't entered the message!!");
         return
     }
+    id++;
     mes = new Message(id, contentMess, 'Iphone');
     arrMessage.push(mes);
-    id++;
     renderMessage1();
     renderMessage2()
     document.querySelector('#enterMes').value = '';
@@ -200,9 +200,9 @@ function send2() {
         alert("you haven't entered the message!!");
         return
     }
+    id++;
     mes = new Message(id, contentMess, 'Iphone');
     arrMessage.push(mes);
-    id++;
     renderMessage1();
     renderMessage2()
     document.querySelector('.div_imessage').value = '';

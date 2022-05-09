@@ -45,8 +45,8 @@ $.imydele = (function () {
     $(".div_iibox-content>ul>li").draggable({ axis: "x" });
     $(".div_iibox-content>ul>li").draggable({
         stop: function (event) {
-            console.log(event)
             let mes = arrMessage.findIndex(function (currenValue) {
+                console.log(event.target.id)
                 if (event.target.id == currenValue.id) {
                     return currenValue
                 }
