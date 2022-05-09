@@ -327,7 +327,7 @@ body {
 }
 .header_iphone-left {
     margin: 0 140px 0 30px;
-    color: rgb(157, 157, 157);
+    color: rgb(198, 218, 108);
 }
 .header_iphone-right {
     display: flex;
@@ -336,7 +336,7 @@ body {
 }
 .batery_percent {
     width: 25px;
-    color: #fff;
+    color: rgb(198, 218, 108);
     margin: 0px 5px 0 5px;
 }
 .battery {
