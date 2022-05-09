@@ -21,8 +21,8 @@ function switchChargeNO() {
 }
 function lowerBattery() {
 	let offChargeNO = setInterval(function () {
-		let power = document.querySelector('#toggleChargelNO').checked;
-		if (power) {
+		let power = document.querySelector('#toggleChargelNO');
+		if (power.checked) {
 			turnLowerBattery();
 		} 
 		else {
@@ -73,8 +73,8 @@ function switchChargeIP() {
 	}
 }
 function ilowerBattery() {
-	let ipower = document.querySelector('#toggleChargelIP').checked;
-	if (ipower) {
+	let ipower = document.querySelector('#toggleChargelIP');
+	if (ipower.checked) {
 		turnLowerBatteryi();
 	} else {
 		clearInterval(onChargeIP)

@@ -51,6 +51,7 @@ $.imydele = (function () {
                     return currenValue
                 }
             });
+            console.log(mes)
             arrMessage.splice(mes, 1)
             renderMessage1();
             renderMessage2();
