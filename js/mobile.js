@@ -148,6 +148,7 @@ function renderMessage1() {
             `
     })
     ulMessage.innerHTML = render.join('');
+    $.mydele();
 }
 function renderMessage2() {
     let ulMessage = document.querySelector('.div_iibox-content>ul');
@@ -172,6 +173,7 @@ function renderMessage2() {
             `
     })
     ulMessage.innerHTML = render.join('');
+    $.imydele();
 }
 
 function send() {
