@@ -90,7 +90,7 @@ body {
 }
 .header_phone-left {
     margin: 0 145px 0 25px;
-    color: aliceblue;
+    color: rgb(198, 218, 108);
 }
 .header_phone-right {
     display: inline-flex;
