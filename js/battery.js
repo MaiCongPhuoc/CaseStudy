@@ -26,8 +26,8 @@ function lowerBattery() {
 			turnLowerBattery();
 		} 
 		else {
-			clearInterval(offChargeNO)
-		
+			clearInterval(offChargeNO);
+			clearInterval(onChargeNO);
 		}
 	})
 }
@@ -72,13 +72,17 @@ function switchChargeIP() {
 		clearInterval(onChargeIP);
 	}
 }
-function ilowerBattery() {
-	let ipower = document.querySelector('#toggleChargelIP');
-	if (ipower.checked) {
-		turnLowerBatteryi();
-	} else {
-		clearInterval(onChargeIP)
-	}
+function lowerBattery() {
+	let offChargeNO = setInterval(function () {
+		let ipower = document.querySelector('#toggleChargelIP');
+		if (ipower.checked) {
+			turnLowerBatteryi();
+		} 
+		else {
+			clearInterval(offChargeNO);
+			clearInterval(onChargeIP);
+		}
+	})
 }
 function turnChargeIP() {
 	onChargeIP = setInterval(function () {
