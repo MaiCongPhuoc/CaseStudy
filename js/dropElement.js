@@ -45,13 +45,13 @@ $.imydele = (function () {
     $(".div_iibox-content>ul>li").draggable({ axis: "x" });
     $(".div_iibox-content>ul>li").draggable({
         stop: function (event) {
+            console.log(event)
             let mes = arrMessage.findIndex(function (currenValue) {
                 if (event.target.id == currenValue.id) {
                     return currenValue
                 }
             });
             arrMessage.splice(mes, 1)
-            console.log(event.target.id)
             renderMessage1();
             renderMessage2();
             $.imydele();

@@ -25,10 +25,10 @@ function lowerBattery() {
 		if (power) {
 			turnLowerBattery();
 		} 
-		// else {
-		// 	clearInterval(onChargeNO)
+		else {
+			clearInterval(offChargeNO)
 		
-		// }
+		}
 	})
 }
 
