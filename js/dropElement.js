@@ -31,6 +31,7 @@ $.mydele = (function () {
                     return currenValue
                 }
             });
+            console.log(mes)
             arrMessage.splice(mes, 1)
             console.log(arrMessage)
             renderMessage1();
