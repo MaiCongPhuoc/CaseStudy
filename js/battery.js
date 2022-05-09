@@ -73,13 +73,13 @@ function switchChargeIP() {
 	}
 }
 function lowerBattery() {
-	let offChargeNO = setInterval(function () {
+	let offChargeIP = setInterval(function () {
 		let ipower = document.querySelector('#toggleChargelIP');
 		if (ipower.checked) {
 			turnLowerBatteryi();
 		} 
 		else {
-			clearInterval(offChargeNO);
+			clearInterval(offChargeIP);
 			clearInterval(onChargeIP);
 		}
 	})
