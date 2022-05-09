@@ -148,6 +148,7 @@ function renderMessage1() {
             `
     })
     ulMessage.innerHTML = render.join('');
+    $.mydele();
 }
 function renderMessage2() {
     let ulMessage = document.querySelector('.div_iibox-content>ul');
@@ -172,6 +173,7 @@ function renderMessage2() {
             `
     })
     ulMessage.innerHTML = render.join('');
+    $.imydele();
 }
 
 function send() {
@@ -190,7 +192,6 @@ function send() {
     document.querySelector('.div_inbox').classList.add('d_none');
     $(".div_message-content>ul>li").draggable({ axis: "x" });
     $(".div_message-content>ul>li").draggable({ revert: true });
-    $.mydele();
 }
 function send2() {
     let contentMess = document.querySelector('#div_imessage').value;
@@ -206,7 +207,6 @@ function send2() {
     renderMessage2()
     document.querySelector('#div_imessage').value = '';
     document.querySelector('.div_imessage').classList.add('d_none');
-    $.imydele(); 
 }
 
 function message() {
