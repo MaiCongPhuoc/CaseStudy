@@ -190,6 +190,7 @@ function send() {
     document.querySelector('.div_inbox').classList.add('d_none');
     $(".div_message-content>ul>li").draggable({ axis: "x" });
     $(".div_message-content>ul>li").draggable({ revert: true });
+    $.mydele();
 }
 function send2() {
     let contentMess = document.querySelector('#div_imessage').value;
@@ -203,8 +204,11 @@ function send2() {
     id++;
     renderMessage1();
     renderMessage2()
-    document.querySelector('#div_imessage').value = '';
+    document.querySelector('.div_imessage').value = '';
     document.querySelector('.div_imessage').classList.add('d_none');
+    $(".div_iibox-content>ul>li").draggable({ axis: "x" });
+    $(".div_iibox-content>ul>li").draggable({ revert: true });
+    $.imydele();
 }
 
 function message() {
