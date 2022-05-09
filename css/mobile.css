@@ -322,7 +322,7 @@ body {
 .header_iphone {
     display: flex;
     padding-top: 5px;
-    /* position: relative; */
+    position: relative;
 }
 .header_iphone-left {
     margin: 0 140px 0 30px;
